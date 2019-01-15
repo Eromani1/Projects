@@ -1,3 +1,6 @@
+"""fUNCTION FOR SCRAPING NBA PER PLAYER STATISTICS (2018-2019 SEASON) FROM BASKETBALL REFERENCE.COM"""
+
+
 #! python3.
 """
 Created on Mon Dec 24 11:20:45 2018
@@ -117,4 +120,5 @@ def get_basketball_reference(player):
     for item in x:
         df[item]= pd.to_numeric(df[item].str.split(".", n = 1, expand = True)[1])/10
     
+    #GETTING PLAYER DATA
     return df.loc[player]
