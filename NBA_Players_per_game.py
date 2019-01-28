@@ -122,3 +122,42 @@ def get_basketball_reference(player):
     
     #GETTING PLAYER DATA
     return df.loc[player]
+
+name=input("For which basketball player would you like to get updated stats?: ")
+
+print(get_basketball_reference(name))
+
+""" SAMPLE RUN
+
+For which basketball player would you like to get updated stats?: Danilo Gallinari
+
+Pos       SF
+Age       30
+Tm       LAC
+G         44
+MP      31.3
+FG       5.8
+FGA     12.8
+FG%       45
+3P       2.4
+3PA      5.5
+3P%     44.6
+2P       3.3
+2PA      7.4
+2P%     45.2
+eFG%    54.4
+FT         5
+FTA      5.5
+FT%     90.6
+ORB      0.9
+DRB        5
+TRB        6
+AST      2.5
+STL      0.7
+BLK      0.3
+TOV      1.4
+PF       2.1
+PPG       19
+Name: Danilo Gallinari, dtype: object
+"""
+
