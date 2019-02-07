@@ -126,11 +126,14 @@ for item in x:
     df[item]= pd.to_numeric(df[item].str.split(".", n = 1, expand = True)[1])/10
 
 
-""" PLOT FT% by pos, highligthing older vs younger players"""
+""" PLOT FT% by pos, highligthing older vs younger players
+
+A veteran player is defined as a player whose age is higher than the average age + 1 positive standard deviation of the age feature
+"""
 df["Veteran"]=df["Age"]>=df["Age"].mean()+df["Age"].std()
 sns.catplot(x="Pos", y="FT%",hue="Veteran",data=df[df["FT%"]>50])
 
-"""testing for difference in the means"""
+"""testing for difference in the means among FT% proportion between Veteran and non-Veteran players"""
 x1=int(df[df["Veteran"]==True]["FTA"].sum())
 p1=df[df["Veteran"]==True]["FT"].sum()/x1
 
